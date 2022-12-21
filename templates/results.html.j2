@@ -1,0 +1,45 @@
+{% extends 'base.html.j2'%}
+
+{% block head %}
+
+    <title>Lakeside Guesser</title>
+
+{% endblock %}
+
+{% block body %}
+
+    <script type="module" src="static/menu.js"></script>
+
+    <div id="name-panel">{{name}}</div>
+
+    <div id="endscreen-parent">
+        <div id="results-parent">
+            <div class="results-panel">
+                <div id="results-heading-1">YOUR SCORE</div>
+                <div id="final-score">{{score}}</div>
+            </div>
+            <div class="results-panel">
+                <div id="results-heading-2">TOP SCORES</div>
+                <div id="leaderboard">
+                    <div id="leaderboard-row">
+                        {{names[0]['name']}}
+                        <div id="gold-score">{{highscores[0]['score']}}</div>
+                    </div>
+                    {% for i in range(4) %}
+                        <div id="leaderboard-row">
+                            {{names[i+1]['name']}}
+                            <div id="points-text">{{highscores[i+1]['score']}}</div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <form method="post" id="name-form" action="game">
+            <input type="hidden" value="" name="name">
+            <input type="submit" value="PLAY AGAIN" id="play-button">
+        </form>
+    </div>
+
+    <script src="static/results.js"></script>
+
+{% endblock %}

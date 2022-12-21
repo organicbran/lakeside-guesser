@@ -1,0 +1,1 @@
+document.getElementById("name-form").name.value = document.getElementById("name-panel").textContent;

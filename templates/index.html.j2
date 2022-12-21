@@ -1,0 +1,34 @@
+{% extends 'base.html.j2'%}
+
+{% block head %}
+
+    <title>Lakeside Guesser</title>
+
+{% endblock %}
+
+{% block body %}
+
+    <script type="module" src="static/menu.js"></script>
+
+    <div id="menu">
+        <div class="title">
+            LAKESIDE
+        </div>
+        <div class="title title-bottom">
+            GUESSER
+        </div>
+        <form method="post" id="name-form" action="game">
+            <input type="text" name="name" placeholder="NAME?" required>
+            <input type="submit" value="PLAY" id="play-button">
+        </form>
+    </div>
+
+    <div id="cards-menu">
+        <div class="card-menu card-1-menu"></div>
+        <div class="card-menu card-2-menu"></div>
+        <div class="card-menu card-3-menu"></div>
+        <div class="card-menu card-4-menu"></div>
+        <div class="card-menu card-5-menu"></div>
+    </div>
+
+{% endblock %}
